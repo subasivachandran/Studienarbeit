@@ -1,0 +1,133 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.ModelFromInputFile(inputFileName=
+    'C:/Users/kssiv/Desktop/Thermal_March13/MyThermalmodel_Apr6/v034b_2_original.inp'
+    , name='v034b_2_original')
+mdb.models['v034b_2_original'].HomogeneousSolidSection(material=
+    'M8012500;BM1480', name='Cohesive_Solid', thickness=None)
+mdb.models['v034b_2_original'].parts['PART-1'].sectionAssignments[406].setValues(
+    offset=0.0, offsetField='', offsetType=MIDDLE_SURFACE, sectionName=
+    'Cohesive_Solid')
+mdb.models['v034b_2_original'].HeatTransferStep(deltmx=1.0, end=0.005, 
+    initialInc=1.0, maxInc=2400.0, maxNumInc=1000, minInc=0.024, name='Step-1', 
+    previous='Initial', timePeriod=2400.0)
+mdb.models['v034b_2_original'].fieldOutputRequests['F-Output-1'].setValues(
+    frequency=10, variables=('NT', ))
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-1'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-2'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-3'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-4'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-5'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-6'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-7'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-8'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-9'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-10'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-11'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-12'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-13'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-14'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-15'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-16'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-17'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-18'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-19'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-20'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-21'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-22'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-23'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-24'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-25'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-26'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-27'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-28'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-29'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-30'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-31'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-32'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-33'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-34'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-35'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-36'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-37'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-38'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-39'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-40'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-41'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-42'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-43'].suppress()
+mdb.models['v034b_2_original'].constraints['MPC-Constraint-44'].suppress()
+mdb.models['v034b_2_original'].rootAssembly.sectionAssignments[0].suppress()
+mdb.models['v034b_2_original'].FilmConditionProp(dependencies=0, name='Steel', 
+    property=((0.004, 20.0), (0.008, 80.0), (0.012, 140.0)), 
+    temperatureDependency=ON)
+mdb.models['v034b_2_original'].FilmConditionProp(dependencies=0, name=
+    'Aluminium', property=((0.008, 20.0), (0.023, 80.0)), 
+    temperatureDependency=ON)
+mdb.models['v034b_2_original'].FilmCondition(createStepName='Step-1', 
+    definition=PROPERTY_REF, interactionProperty='Aluminium', name=
+    'Aluminium_SPOS', sinkAmplitude='', sinkDistributionType=UNIFORM, 
+    sinkFieldName='', sinkTemperature=20.5, surface=
+    mdb.models['v034b_2_original'].rootAssembly.surfaces['S1715;ALUMINIUM_SPOS'])
+mdb.models['v034b_2_original'].FilmCondition(createStepName='Step-1', 
+    definition=PROPERTY_REF, interactionProperty='Aluminium', name=
+    'Aluminium_SNEG', sinkAmplitude='', sinkDistributionType=UNIFORM, 
+    sinkFieldName='', sinkTemperature=20.5, surface=
+    mdb.models['v034b_2_original'].rootAssembly.surfaces['S1716;ALUMINIUM_SNEG'])
+mdb.models['v034b_2_original'].FilmCondition(createStepName='Step-1', 
+    definition=PROPERTY_REF, interactionProperty='Steel', name='Steel_SPOS', 
+    sinkAmplitude='', sinkDistributionType=UNIFORM, sinkFieldName='', 
+    sinkTemperature=20.5, surface=
+    mdb.models['v034b_2_original'].rootAssembly.surfaces['S1713;STEEL_SPOS'])
+mdb.models['v034b_2_original'].FilmCondition(createStepName='Step-1', 
+    definition=PROPERTY_REF, interactionProperty='Steel', name='Steel_SNEG', 
+    sinkAmplitude='', sinkDistributionType=UNIFORM, sinkFieldName='', 
+    sinkTemperature=20.5, surface=
+    mdb.models['v034b_2_original'].rootAssembly.surfaces['S1714;STEEL_SNEG'])
+mdb.models['v034b_2_original'].Temperature(createStepName='Initial', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(180.0, ), name='Predefined Field-1', region=Region(
+    nodes=mdb.models['v034b_2_original'].rootAssembly.instances['PART-1-1'].nodes.getSequenceFromMask(
+    mask=(
+    '[#ffffffff:786 #ffe1ffff #ffffffff:6 #bff3ffff #fffffffe #ffffffff:6106 #ffffff7f', 
+    ' #fffffffb #ffffffff #ffffdfff #fffffeff #ffffffff #fffffff #0', 
+    ' #ffffffff:16680 #7ff #ffff8000 #ffffffff:7305 #10ffff #0:13 #ffc00000', 
+    ' #ffffffff:1342 #3fffffff #ffffffc0 #ffffffff:1761 #1ff #0:10 #ff800000', 
+    ' #ffffffff:1855 #807fffff #ffffffff:90 #7 #0:20 #fff00000 #ffffffff:1344', 
+    ' #fffffff #ffffff00 #ffffffff:151 #3ff #0:8 #f0000000 #ffffffff:72', 
+    ' #1ffffff #ffffffe0 #ffffffff:2626 #7ffff ]', ), )))
+mdb.models['v034b_2_original'].parts['PART-1'].setElementType(elemTypes=(
+    ElemType(elemCode=DC3D8, elemLibrary=STANDARD), ), regions=(
+    mdb.models['v034b_2_original'].parts['PART-1'].elements.getSequenceFromMask(
+    mask=('[#ffffffff:184 #7fffff ]', ), ), ))
+mdb.models['v034b_2_original'].parts['PART-1'].setElementType(elemTypes=(
+    ElemType(elemCode=DS4, elemLibrary=STANDARD), ElemType(elemCode=DS3, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['v034b_2_original'].parts['PART-1'].elements.getSequenceFromMask(
+    mask=(
+    '[#0:184 #ff800000 #ffffffff:27456 #1ffff #0:555 #fff00000 #ffffffff:9154', 
+    ' #7ff ]', ), ), ))
+mdb.models['v034b_2_original'].parts['PART-1'].setElementType(elemTypes=(
+    ElemType(elemCode=DC3D8, elemLibrary=STANDARD), ), regions=(
+    mdb.models['v034b_2_original'].parts['PART-1'].elements.getSequenceFromMask(
+    mask=('[#0:27641 #fffe0000 #ffffffff:555 #fffff ]', ), ), ))
+mdb.models['v034b_2_original'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='v034b_2_original', modelPrint=OFF
+    , multiprocessingMode=DEFAULT, name='Thermal', nodalOutputPrecision=SINGLE, 
+    numCpus=4, numDomains=4, numGPUs=0, queue=None, resultsFormat=ODB, scratch=
+    '', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+# Save by kssiv on 2020_04_12-17.17.58; build 2017 2016_09_27-23.54.59 126836
